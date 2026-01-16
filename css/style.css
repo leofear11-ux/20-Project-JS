@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: no-repeat center/cover url('../img/tgt14.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.sect_pomodoro{
+    /* ajouter un backdrop-filter */
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    backdrop-filter: blur(10px);
+    border: 1px solid white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 800px;
+}
+
+.sect_pomodoro #big_title{
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    /* couleur rose foncé */
+    color: #ff4d6d;
+}
+
+.display_chrono{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.display_chrono .display_workTime,
+.display_chrono .display_breakTime{
+    font-size: 2em;
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 270px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background: rgba(255, 255, 255, 0.1); */
+    position: relative;
+}
+
+.display_chrono .display_workTime img,
+.display_chrono .display_breakTime img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    opacity: 0.3;
+    position: absolute;
+    inset: 0;
+}
+
+.display_chrono .display_workTime::after,
+.display_chrono .display_breakTime::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.display_chrono .display_workTime,
+.display_chrono .display_breakTime{
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+/* hover effect que dans l'image*/
+.display_chrono .display_workTime:hover img,
+.display_chrono .display_breakTime:hover img{
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* hover effect les mots */
+.display_chrono .display_breakTime:hover #chrono_break{
+    animation: sautiller 0.5s ease-in-out;
+}
+
+.display_workTime:hover #chrono_work{
+    animation: sautiller 0.5s ease-in-out;
+}
+
+.display_workTime #chrono_work,
+.display_breakTime #chrono_break{
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    z-index: 2;
+    color: white;
+    position: relative;
+}
+
+.all_button{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.all_button button{
+    background: transparent;
+    border: 1px solid #ff4d6d;
+    /* couleur rose claire */
+    color: white;
+    font-weight: bold;
+    padding: 15px 20px;
+    font-size: 1.6em;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.all_button button:hover{
+    background: #ff4d6d;
+    animation: vibreur 0.3s infinite;
+}
+
+
+.quote{
+    font-style: italic;
+    font-size: 1.2em;
+    color: white;
+    margin-block: 12px;
+}
+
+/* Animation qui vibre le stopwatch*/
+@keyframes vibreur {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Animation qui fait sauter les mots */
+@keyframes sautiller {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
