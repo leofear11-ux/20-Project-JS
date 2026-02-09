@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* filter: invert(100%); */
+    position: relative;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom, #90d5ff, #ccc);
+    height: 100vh;
+}
+
+.container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #111;
+}
+
+.container .app_title {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 3rem;
+    color: #fff;
+}
+
+.container .block_info_logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, .2);
+    border: 1px solid rgba(255, 255, 255, .3);
+    backdrop-filter: blur(20px);
+    padding: 30px 25px;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container .block_info_logo .block_logo {
+    font-size: 1.6rem;
+    color: #f7fb17ce;
+    animation: moveLeft 1s linear backwards;
+}
+
+.container .block_info_logo .block_info {
+    text-align: right;
+    color: #111;
+    font-size: 2rem;
+    text-transform: capitalize;
+    animation: moveRight 1s linear backwards;
+}
+@keyframes moveLeft {
+    from{
+        transform: translate(100%);
+        opacity: 0;
+    }to{
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+@keyframes moveRight {
+    from{
+        transform: translate(-100%);
+        opacity: 0;
+    }to{
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+.result{
+    max-width: 800px;
+    width: 100%;
+    color: #fff;
+    font-size: 1.8em;
+    background: transparent;
+    box-shadow: 0 0 100px rgba(0, 0, 0, .2);
+    border: 3px solid rgba(255, 255, 255, .18);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.logo_weather {
+    width: 150px;
+    height: 150px;
+    transform: scale(1.6);
+}
+
+.column_prevision .column_hours, .column_prevision .column_days{
+    display: grid;
+    grid-template: 100px / repeat(7, 1fr);
+    gap: 10px;
+}
+
+.column_hours .block_h, .column_days .block_d{
+    border-radius:8px;
+    padding: 20px;
+    background: transparent;
+    box-shadow: 0 0 100px rgba(0, 0, 0, .2);
+    border: 1px solid rgba(255, 255, 255, .3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    font-size: 21px;
+    color: #161616;
+}
+.block_d:hover, .block_h:hover{
+    background: rgba(0, 0, 0, .2);
+}
+.temp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}

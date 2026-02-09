@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <section class="section_quiz">
+        <!-- titre de l'application -->
+        <h2 class="big_title">Quiz App</h2>
+
+        <div class="container_quiz">
+            <!-- carte de quiz -->
+            <div class="card_quiz">
+                <h3 class="title_quiz">General Knowledge about Front-end</h3>
+                <p class="description_quiz"><span id="html">HTML</span><span id="css">CSS</span><span id="js">JS</span></p>
+                <button class="start">Start Quiz</button>
+            </div>
+
+            <!-- Le block de quiz -->
+            <div class="box_quiz">
+                <div class="question_block">
+                    <span id="question_text">Quelle balise HTML permet de créer un paragraphe ?</span>
+                </div>
+                
+                <div class="answer_block">
+                    <!-- Les reponses seront generees ici -->
+                    <form>
+                        <div class="options">
+                            <!-- Les options seront generees ici -->
+                            <!-- 1er option -->
+                            <label>
+                                a )
+                                <input type="radio" name="option" class="option" value="a">
+                                <span class="option_text">&lt;p&gt;</span>
+                            </label>
+                            <!-- 2eme option -->
+                            <label>
+                                b )
+                                <input type="radio" name="option" class="option" value="b">
+                                <span class="option_text">&lt;paragraph&gt;</span>
+                            </label>
+                            <!-- 3eme option -->
+                            <label>
+                                c )
+                                <input type="radio" name="option" class="option" value="c">
+                                <span class="option_text">&lt;pg&gt;</span>
+                            </label>
+                            <!-- 4eme option -->
+                            <label>
+                                d )
+                                <input type="radio" name="option" class="option" value="d">
+                                <span class="option_text">&lt;text&gt;</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" disabled>submit</button>
+                    </form>
+            </div>
+        </div>
+
+        <!-- Le block de résultat -->
+        <div class="box_result">
+            <h3 class="title_result">Votre Résultat</h3>
+            <p class="description_result">your score is <span class="score_result">0</span> / <span class="total_result">0</span></p>
+            <button class="start">Restart Quiz</button>
+        </div>
+    </section>
+
+    <!-- myScript -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap-5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
+    
+    <div class="card w-50 p-3">
+        <h2 class="text-primary">COOKIES 🍪</h2>
+            <input type="text" name="cookie_name" value="cookie-1" class="form-control mb-3">
+            <input type="text" name="cookie_value" value="50" class="form-control mb-3">
+            <input type="date" name="cookie_expire" class="form-control mb-3">
+
+            <div class="group-btn">
+                <button data-cookie="create" class="btn btn-primary">🛠️</button>
+                <button  data-cookie="all_display" class="btn btn-danger">❌</button>
+            </div> 
+    </div>
+
+    <div class="container w-50">
+        <p class="info text-sucess"></p>
+        <ul class="display">
+        </ul>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

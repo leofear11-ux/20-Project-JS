@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* My color  : */
+    /* Type black or dark */
+    --col-dark-1: #02020ae6;
+    --col--darkLight1: #393e41;
+    --col--light: #f9f9f9;
+    /* Type blue */
+    --col-blue1: #4169E1;
+    --col-blue2: #00a6ed;;
+    /* Type yellow */
+    --col-yellow1: #FFA800;
+    --col-yellow2: #ffd23f;
+    /* Type blue */
+    --col-red1: #FA003F;
+    --col-red2: #ef476f;
+}
+
+body{
+    background: #f9f9f9;
+    font-family: "poppins", sans-serif;
+    min-height: 100vh;
+}
+
+header{
+    padding: .3rem;
+    margin-bottom: 2rem;
+}
+
+header .big_title{
+    color: transparent;
+    font-size: 4rem;
+    -webkit-text-stroke: thin var(--col-red1);
+    transition: .3s ease;
+}
+
+header .big_title:hover{
+    color: var(--col-red1);
+}
+
+section .search_pok{
+    position: relative;
+    padding-inline: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+}
+
+section .search_pok input{
+    --boder-rad: 8px;
+    width: 70%;
+    padding: 1.2rem;
+    outline: none;
+    background: none;
+    border-radius: var(--boder-rad);
+    border: none;
+    box-shadow: 0 0 4px;
+    transition: all .3s linear;
+}
+
+.search_pok input:focus{
+    box-shadow: 0 0 8px var(--col-red1);
+}
+
+section .search_pok label{
+    position: absolute;
+    color: var(--col-yellow1);
+    font-size: 16px;
+}
+
+section .search_pok label.active,
+section .search_pok input:focus + label{
+    color: #fff;
+}
+
+section .search_pok button{
+    padding: .8rem;
+    border: none;
+    border-radius: 8px;
+    border: solid 3px var(--col-yellow1);
+}
+
+section .search_pok button i{
+    font-size: 1.6em;
+    color: transparent;
+    -webkit-text-stroke: thin var(--col-yellow1);
+}
+
+.search_pok button:hover{
+    transform: scale(1.1);
+}
+.search_pok button:hover i{
+    color: var(--col-yellow1);
+}
+
+.container .list_pok{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem 2rem 2rem;
+    list-style: none;
+    margin-top: 25px;
+}
+
+.container .card_pok{
+    font-size: 20px;
+    --boder-radius: 1rem;
+    color: rgba(0, 0, 0, 0.8);
+    background: var(--col--darkLight1);
+    border-radius: var(--boder-radius);
+    padding: 30px;
+    box-shadow: 0 0 15px #000000a6;
+    transition: transform .3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    background-image: radial-gradient();
+    isolation: isolate;
+    position: relative;
+    overflow: hidden;
+}
+
+.card_pok::before, .card_pok::after{
+    content: '';
+    position: absolute;
+}
+
+.card_pok::before{
+    width: 200%;
+    height: 200%;
+    /* fonds arc-en-ciel */
+    background-image: conic-gradient(var(--col-red1) 0deg, var(--col-yellow1) 60deg, var(--col-blue2) 120deg, var(--col-red1) 180deg, var(--col-yellow1) 240deg, var(--col-blue2) 300deg, var(--col-red1) 360deg);
+    inset: -50%;
+    z-index: -2;
+    animation: border-anim 3s linear infinite;
+
+}
+
+.card_pok:hover::before{
+    animation-play-state: paused;
+}
+
+.card_pok::after{
+    --inset: 2px;
+    inset: var(--inset);
+    background-color: #ccc;
+    border-radius: calc(var(--boder-radius) - var(--inset));
+    z-index: -1;
+    transition: all .3s linear;
+}
+
+.card_pok:hover::after{
+    background-color: var(--col--darkLight1);
+}
+
+@keyframes border-anim {
+    to{
+        transform: rotate(-360deg);
+    }
+}
+
+.hoverableCard:hover{
+    animation: bouncee .3s;
+    transform: scale(1.03); 
+}
+
+@keyframes bouncee {
+    50%{transform: scale(1.07);}
+    100%{transform: scale(1.03);}
+}
+
+.loader{
+    position: absolute;
+    top: 250px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader .point{
+    width: 20px;
+    height: 20px;
+    background: var(--col-red1);
+    border-radius: 50%;
+    margin: 0 10px;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+.point:nth-child(2){
+    animation-delay: .2s;
+}
+
+.point:nth-child(3){
+    animation-delay: .4s;
+}
+
+.point:nth-child(4){
+    animation-delay: .6s;
+}
+
+@keyframes bounce {
+    0%, 100%{transform: translateY(0);}
+    50%{transform: translateY(-20px);}
+}
+
